@@ -1,0 +1,38 @@
+.list {
+  margin-bottom: 20px;
+}
+
+.listItem {
+  display: grid;
+  grid-template-columns: 90px 2fr;
+  border: 1px solid #c5c5c5;
+  padding: 10px;
+}
+
+.gridItemBold {
+  font-weight: 700;
+}
+
+.link {
+  font-weight: 700;
+  font-size: 14px;
+  color: #000000;
+}
+
+.description {
+  font-size: 10px;
+}
+
+@media (min-width: 768px) {
+  .listItem {
+    grid-template-columns: 1fr 3fr;
+  }
+
+  .link {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+}

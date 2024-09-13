@@ -1,0 +1,40 @@
+.nav {
+  display: flex;
+  align-items: center;
+  background-color: #ddd6d6;
+  margin-bottom: 30px;
+}
+
+.navList {
+  display: flex;
+  margin: 0 auto;
+}
+
+.navLink {
+  line-height: 50px;
+  cursor: pointer;
+  padding: 13px;
+  font-weight: 800;
+  font-size: 20px;
+  color: black;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.navLink:hover {
+  color: #f5f5f5;
+  background-color: rgb(151, 139, 139);
+}
+
+@media (min-width: 768px) {
+  .navList {
+    margin: 0 20px;
+  }
+
+  .navLink {
+    line-height: 70px;
+    font-size: 24px;
+    padding: 20px;
+  }
+}

@@ -1,0 +1,11 @@
+.error {
+  color: rgb(253, 3, 86);
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .error {
+    font-size: 18px;
+  }
+}
