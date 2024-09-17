@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import styles from "./Form.module.css";
+import { useResult } from "../../Utils/Hooks/useResult"; 
 
 const VIN_REGEX = /^[A-HJ-NPR-Z0-9]{17}$/;
 
 function Form({ onSuccess, selectedVin, history, onHistoryClick }) {
+    const { result, setResult } = useResult(); 
     const [vin, setVin] = useState("");
     const [error, setError] = useState("");
-    const [result, setResult] = useState(null);
 
     useEffect(() => {
         if (selectedVin) {
@@ -111,28 +112,6 @@ function Form({ onSuccess, selectedVin, history, onHistoryClick }) {
                     </div>
                 </div>
             </div>
-
-            {result && (
-                <div className={styles.result}>
-                    <h2 className={styles.resultTitle}>VIN Information</h2>
-
-                    <div className={styles.resultContainer}>
-                        {result
-                            .filter((item) => item.Variable && item.Value)
-                            .map((item, index) => (
-                                <div key={index} className={styles.gridRow}>
-                                    <div className={styles.gridItemBold}>
-                                        {item.Variable}
-                                    </div>
-
-                                    <div className={styles.gridItem}>
-                                        {item.Value}
-                                    </div>
-                                </div>
-                            ))}
-                    </div>
-                </div>
-            )}
         </div>
     );
 }

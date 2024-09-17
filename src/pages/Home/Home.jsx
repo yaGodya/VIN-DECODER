@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Form from "../../components/Form/Form";
 import useVinHistory from "../../Utils/Hooks/useVinHistory";
 import styles from "./Home.module.css";
+import Result from "../../components/Result/Result"; // Импорт нового компонента
 
 const Home = () => {
     const { history, addToHistory } = useVinHistory();
@@ -19,6 +20,7 @@ const Home = () => {
                 history={history}
                 onHistoryClick={handleHistoryClick}
             />
+            <Result /> 
         </div>
     );
 };
